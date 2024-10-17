@@ -5,7 +5,9 @@ def cislo_text(cislo):
     larger_numbers = ["deset", "jedenáct", "dvanáct", "třináct", "čtrnáct", "patnáct", "šestnáct", "sedmnáct", "osmnáct", "devatenáct"]
     desitky = ["","", "dvacet", "třicet", "čtyřicet", "padesát", "šedesát", "sedmdesát", "osmdesát", "devadesát"]
     
-    if cislo < 10:
+    if cislo < 0 or cislo > 100:
+        return "Číslo mimo dosah"
+    elif cislo < 10:
         return small_numbers[cislo]
     elif cislo < 20:
         return larger_numbers[cislo - 10]
@@ -18,8 +20,9 @@ def cislo_text(cislo):
             return desitky[zaokrouhleni] + " " + small_numbers[zbytek]
     elif cislo == 100:
         return "sto"
-    else:
-        return "Číslo mimo rozsah"
+    elif cislo == 0:
+        return "nula"
+    
 
 
 if __name__ == "__main__":
