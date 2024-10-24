@@ -14,7 +14,7 @@ def deduplikace_dotazu(dotazy):
             dotaz2 = dotazy[j]
             jaccard = jaccardova_vzdalenost_mnozin(dotaz1["serp"], dotaz2["serp"])
             levenstein = levensteinova_vzdalenost(dotaz1["dotaz"], dotaz2["serp"])
-            if jaccard < 0.5 or levenstein <= 1
+            if jaccard < 0.5 or levenstein <= 1:
                 dotazy.pop(j)
             else:
                 j += 1
